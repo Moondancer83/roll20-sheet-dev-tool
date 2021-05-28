@@ -4,4 +4,7 @@
 .idea/
 *.iml
 
+# roll20-sheet-dev-tools
+build/
+
 

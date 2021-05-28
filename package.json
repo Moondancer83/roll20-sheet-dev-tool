@@ -1,6 +1,6 @@
 {
   "name": "roll20-sheet-dev-tool",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Character sheet development tool for Roll20",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,9 @@
     "start:mac": "open ./toolbox/index.html",
     "start:unix": "xdg-open ./toolbox/index.html",
     "start:cygwin": "cygstart ./toolbox/index.html",
-    "build": "echo \"Error: Unsupported operation\" && exit 1"
+    "prebuild": "rm -rf ./build/$npm_config_project",
+    "build": "echo Project: $npm_config_project && mkdir -p build && cp -R ./src/$npm_config_project build/$npm_config_project",
+    "postbuild": "mv ./build/$npm_config_project/sheet.html ./build/$npm_config_project/$npm_config_project.html && mv ./build/$npm_config_project/sheet.css ./build/$npm_config_project/$npm_config_project.css"
   },
   "author": "Moondancer83",
   "repository": "https://github.com/Moondancer83/roll20-sheet-dev-tool.git",

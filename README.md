@@ -21,10 +21,12 @@
 - Provides sandbox environment for building your Character sheet
 - Separates document structure (HTML) and styles (CSS)
 - Easy reload without the need of searching for files
+- Builds sheet for deployment
+  - Copy all files from `src/<PROJECT_NAME>` into `build/<PROJECT_NAME>` folder
+  - Rename `sheet.html` and `sheet.css` according to Roll20 standards 
 
 ## Features to come
 
 - Renders sheet in iframe as in production
 - Free-hand resizing of sheet
-- Builds sheet for deployment (rename files to convention)
-- Imitating Roll20 scripting language
+- Imitating Roll20 scripting library
