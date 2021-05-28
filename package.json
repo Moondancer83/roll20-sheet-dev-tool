@@ -1,10 +1,10 @@
 {
-  "name": "roll20-dev-tool",
+  "name": "roll20-sheet-dev-tool",
   "version": "0.0.1",
   "description": "Character sheet development tool for Roll20",
   "main": "index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "author": "Moondancer83",
+  "repository": "https://github.com/Moondancer83/roll20-sheet-dev-tool.git",
   "license": "MIT"
 }
