@@ -3,7 +3,13 @@
   "version": "0.0.1",
   "description": "Character sheet development tool for Roll20",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start:windows": "cmd /c start ./toolbox/index.html",
+    "start:mac": "open ./toolbox/index.html",
+    "start:unix": "xdg-open ./toolbox/index.html",
+    "start:cygwin": "cygstart ./toolbox/index.html",
+    "build": "echo \"Error: Unsupported operation\" && exit 1"
+  },
   "author": "Moondancer83",
   "repository": "https://github.com/Moondancer83/roll20-sheet-dev-tool.git",
   "license": "MIT"

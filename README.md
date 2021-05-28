@@ -7,6 +7,11 @@
 - Create `sheet.html` for the sheet itself
 - Create `sheet.css` for the styles
 - Open up toolbox/index.html in a browser
+  - If you have npm installed on your machine you can run the tool with the following commands
+    - `npm run start:windows`
+    - `npm run start:mac`
+    - `npm run start:linux`
+    - `npm run start:cygwin`
 - Select add your project name and hit enter
 - Your character sheet is shown
 
