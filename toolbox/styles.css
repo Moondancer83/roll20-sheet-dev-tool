@@ -1,0 +1,50 @@
+html, body {
+  height: 100%;
+}
+body {
+  background: whitesmoke;
+}
+#dialog-window {
+  background: white;
+  height: calc(100% - 7em);
+  margin-top: 1em;
+  margin-left: 2em;
+  border: 1px solid lightgray;
+}
+
+.roll20-dev-tool-navigation {
+  height: 3em;
+  line-height: 3em;
+  padding: 0 4em;
+  border: 0 solid lightgray;
+  border-bottom-width: 1px;
+  background: white;
+}
+.roll20-dev-tool-navigation label {
+  display: inline-block;
+  font-weight: bold;
+}
+.roll20-dev-tool-navigation section {
+  display: inline-block;
+}
+.roll20-dev-tool-navigation section:not(:first-of-type) {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#roll20-dev-tool-notification {
+  height: 2em;
+  line-height: 2em;
+  padding: 0 4em;
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: transparent;
+
+}
+#roll20-dev-tool-notification.error {
+  border-color: darkred;
+
+  background: lavenderblush;
+  color: darkred;
+  font-weight: bold;
+}
