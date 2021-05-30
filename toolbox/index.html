@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <title>Roll20 Developer Tool</title>
 
-  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/assets/base.css?1622129767" />
-  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/css/charsheet.css?1622129765" />
-  <link href="https://fonts.googleapis.com/css?family=Patrick+Hand|Contrail+One|Shadows+Into+Light|Candal&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
-
   <!-- Roll20 DevTool : START -->
   <link rel="stylesheet" type="text/css" href="styles.css" />
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -35,44 +31,7 @@
 <div id="roll20-dev-tool-notification"></div>
 <!-- Roll20 DevTool : END -->
 
-
-<div id="dialog-window" class="ui-dialog">
-  <div class="dialog largedialog characterviewer" style="display: block;">
-
-    <ul class="nav nav-tabs">
-      <li class="">
-        <a href="javascript:void(0);" data-tab="bioinfo"> Bio &amp; Info</a>
-      </li>
-
-
-      <li class="active">
-        <a href="javascript:void(0);" data-tab="charsheet">Character Sheet</a>
-      </li>
-      <li style="display: none;">
-        <a href="javascript:void(0);" data-tab="charmancer">Charactermancer</a>
-      </li>
-
-      <li>
-        <a href="javascript:void(0);" data-tab="attributesabilities">Attributes &amp; Abilities</a>
-      </li>
-
-    </ul>
-
-    <div id="tab-content" class="tab-content">
-      <form class="sheetform" autocomplete="off">
-        <div id="custom-sheet-container" class="charactersheet tab-pane charsheet lang-undefined" style="display: block;">
-          <!-- Custom character sheet content comes here -->
-          <!-- Content will be loaded automatically from ../src/<PROJECT_NAME>/sheet.html -->
-
-          <!-- Custom CSS comes here -->
-          <!-- Content will be loaded automatically from ../src/<PROJECT_NAME>/sheet.css -->
-
-        </div>
-        <div class="charmancer tab-pane charsheet" style="display: none;"></div>
-      </form>
-    </div>
-  </div>
-</div>
+<iframe id="roll20-character-sheet" src="roll20Template.html"></iframe>
 
 </body>
 </html>

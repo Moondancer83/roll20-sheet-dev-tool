@@ -1,6 +1,6 @@
 {
   "name": "roll20-sheet-dev-tool",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Character sheet development tool for Roll20",
   "main": "index.js",
   "scripts": {

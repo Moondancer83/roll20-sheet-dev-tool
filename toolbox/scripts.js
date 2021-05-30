@@ -24,7 +24,8 @@ function load(projectName) {
   clear();
   $.get(`../src/${projectName}/sheet.html`, function(data){
     console.debug("Fetched HTML", data);
-    $("#custom-sheet-container").append(data);
+    $("#roll20-character-sheet").contents()
+      .find("#custom-sheet-container").append(data);
     $("#roll20-dev-tool-notification")
       .empty()
       .removeClass();
@@ -38,7 +39,8 @@ function load(projectName) {
   $.get(`../src/${projectName}/sheet.css`, function(data){
     console.debug("Fetched CSS", data);
     const styles = $("<style>").append(data);
-    $("#custom-sheet-container").append(styles);
+    $("#roll20-character-sheet").contents()
+      .find("#custom-sheet-container").append(styles);
   });
 }
 
@@ -47,10 +49,11 @@ function load(projectName) {
  * View size
  */
 let width = 768;
+
 function widthChange() {
   const width = $("#roll20-dev-tool-view-width").val();
   console.debug("width", width);
-  $("#dialog-window").css("width", `${width}px`);
+  $("#roll20-character-sheet").css("width", `${width}px`);
 }
 
 $(document).ready(widthChange);
