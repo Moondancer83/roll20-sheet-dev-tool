@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Moondancer's Roll20 Character Sheet Toolset</title>
+
+  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/assets/app.css">
+  <style>
+    #roll20-character-sheet-container {
+      border-color: orangered;
+      border-image-source: url(https://is1-ssl.mzstatic.com/image/thumb/Purple/v4/b3/5c/48/b35c480d-f748-2d40-db00-8a8ea4adfbd3/source/256x256bb.jpg);
+      border-image-slice: 30;
+      border-image-repeat: repeat;
+      border-image-width: 5px;
+    }
+  </style>
+</head>
+<body>
+<section id="character-sheet-wrapper" style="display: flex;">
+
+  <aside id="character-sheet-configuration" style="display: flex; flex-direction:column; padding: 10px">
+    <label for="input-width">Width (<span id="value-width"></span>)</label>
+    <input type="range" id="input-width" name="width" value="360" min="360" max="1920" onchange="updateWidth()"
+           list="resolutions"/>
+    <!-- Affecting .(ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable) -->
+
+    <hr style="width: 100%"/>
+
+    <label for="input-height">Height (<span id="value-height"></span>)</label>
+    <input type="range" id="input-height" name="height" value="640" min="360" max="1920" onchange="updateHeight()"
+           list="resolutions"/>
+    <!-- Affecting .(dialog characterdialog ui-dialog-content ui-widget-content) -->
+
+    <datalist id="resolutions">
+      <option value="360"></option>
+      <option value="601"></option>
+      <option value="640"></option>
+      <option value="768"></option>
+      <option value="800"></option>
+      <option value="962"></option>
+      <option value="1024"></option>
+      <option value="1080"></option>
+      <option value="1280"></option>
+      <option value="1920"></option>
+    </datalist>
+  </aside>
+
+  <main id="character-sheet-container">
+    <!-- START Character Sheet -->
+
+    <div id="roll20-character-sheet-container"
+         class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" style="display: flex;"
+         role="dialog" aria-labelledby="ui-id-11">
+      <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix ui-draggable-handle">
+        <span id="ui-id-11" class="ui-dialog-title">Character Sheet</span>
+      </div>
+      <div id="roll20-character-sheet-wrapper" class="dialog characterdialog ui-dialog-content ui-widget-content"
+           style="display: block; width: auto; min-height: 0; height: 657px;" scrolltop="0" scrollleft="0">
+        <iframe
+            name="iframe_-MaPM4SuI5Qguldmf-L7"
+            title="Character sheet"
+            src="lib/wrapper.html"
+        ><!-- SRC is the file that contain the sheet to develop --></iframe>
+      </div>
+    </div>
+
+    <!-- END Character Sheet -->
+  </main>
+
+</section>
+
+<script>
+  updateWidth();
+  updateHeight();
+
+  function updateWidth () {
+    var width = document.getElementById("input-width").value;
+    document.getElementById("value-width").innerText = width;
+    document.getElementById("roll20-character-sheet-container").style.width = `${width}px`;
+  }
+
+  function updateHeight () {
+    var height = document.getElementById("input-height").value;
+    document.getElementById("value-height").innerText = height;
+    document.getElementById("roll20-character-sheet-wrapper").style.height = `${height}px`;
+  }
+</script>
+</body>
+</html>

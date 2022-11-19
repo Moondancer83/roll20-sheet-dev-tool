@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Character Sheet Wrapper</title>
+
+  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/css/themes/bootstrap/jquery-ui-1.8.16.custom.css">
+  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/assets/base.css">
+  <!-- <link rel='stylesheet' type='text/css' href='https://app.roll20.net/assets/app.css' /> -->
+  <link rel="stylesheet" type="text/css" href="https://app.roll20.net/css/charsheet.css">
+  <link href="https://app.roll20.net/css/charsheet.css" rel="stylesheet" type="text/css">
+  <link
+      href="https://fonts.googleapis.com/css?family=Patrick+Hand|Contrail+One|Shadows+Into+Light|Candal&amp;subset=latin,latin-ext"
+      rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="https://app.roll20.net/v2/js/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="https://app.roll20.net/js/jquery-ui.1.9.0.custom.min.js"></script>
+  <script type="text/javascript" src="https://app.roll20.net/js/jquery.ui.touch.js"></script>
+  <!--  <script type="text/javascript" src="https://app.roll20.net/js/d20/charsheetjs/view/draggables.js"></script>-->
+  <!--  <script src="https://app.roll20.net/js/d20/charsheetjs/lottie-player.js"></script>-->
+
+  <link rel="stylesheet" type="text/css" href="../src/style.css">
+</head>
+<body>
+<div id="dialog-window" class="ui-dialog" aria-live="polite" aria-relevant="all">
+
+  <div class="dialog largedialog characterviewer" style="display: block;">
+    <!-- Navigation bar START -->
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a href="javascript:void(0);" data-tab="charsheet">Character Sheet</a>
+      </li>
+      <li style="display: none;">
+        <a href="javascript:void(0);" data-tab="charmancer">Charactermancer</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-tab="bioinfo"> Bio &amp; Info</a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" data-tab="attributesabilities">Attributes &amp; Abilities</a>
+      </li>
+    </ul>
+    <!-- Navigation bar END -->
+
+    <div id="tab-content" class="tab-content">
+      <form class="sheetform" autocomplete="off">
+        <div class="charactersheet tab-pane charsheet lang-undefined" style="display: block;">
+          <section id="custom-sheet">REPLACE ME</section>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  window.addEventListener('submit', function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  });
+
+  window.addEventListener('keydown', function (e) {
+    if (e.which === 13 && e.target.tagName.toLowerCase() === 'input') {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+  });
+</script>
+<script>
+  $("#custom-sheet").load("../src/layout.html");
+</script>
+</body>
+</html>
