@@ -31,6 +31,10 @@
            list="resolutions"/>
     <!-- Affecting .(dialog characterdialog ui-dialog-content ui-widget-content) -->
 
+    <hr style="width: 100%"/>
+
+    <button onclick="flip()">Flip</button>
+
     <datalist id="resolutions">
       <option value="360"></option>
       <option value="601"></option>
@@ -70,19 +74,38 @@
 </section>
 
 <script>
-  updateWidth();
-  updateHeight();
+  var width = getWidth();
+  var height = getHeight();
 
-  function updateWidth () {
-    var width = document.getElementById("input-width").value;
+  updateWidth(width);
+  updateHeight(height);
+
+  function getWidth() {
+    return document.getElementById("input-width").value;
+  }
+
+  function getHeight() {
+    return document.getElementById("input-height").value;
+  }
+
+  function updateWidth (width) {
     document.getElementById("value-width").innerText = width;
     document.getElementById("roll20-character-sheet-container").style.width = `${width}px`;
   }
 
-  function updateHeight () {
-    var height = document.getElementById("input-height").value;
+  function updateHeight (height) {
     document.getElementById("value-height").innerText = height;
     document.getElementById("roll20-character-sheet-wrapper").style.height = `${height}px`;
+  }
+
+  function flip() {
+    var width = getWidth();
+    var height = getHeight();
+
+    updateWidth(height);
+    document.getElementById("input-width").value = height;
+    updateHeight(width);
+    document.getElementById("input-height").value = width;
   }
 </script>
 </body>
